@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BIOCODE | Registro de Árboles</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Generador de códigos QR -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="header">
+
+        <div class="logo">
+            🌳
+        </div>
+
+        <div>
+            <h1>BioCode</h1>
+            <p>Sistema de identificación de árboles</p>
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- PRESENTACIÓN -->
+        <section class="hero">
+
+            <div>
+                <span class="badge">AGRICULTURA DE PRECISIÓN</span>
+
+                <h2>
+                    Identifica y conoce
+                    <span>cada árbol</span>
+                </h2>
+
+                <p>
+                    Registra los árboles de tu escuela o comunidad,
+                    genera un código QR único y consulta su información
+                    desde cualquier dispositivo.
+                </p>
+            </div>
+
+            <div class="hero-icon">
+                🌱
+            </div>
+
+        </section>
+
+
+        <!-- ESTADÍSTICAS -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">🌳</div>
+                <div>
+                    <p>Total de árboles</p>
+                    <h3 id="totalArboles">0</h3>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">💚</div>
+                <div>
+                    <p>En buen estado</p>
+                    <h3 id="arbolesBuenos">0</h3>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📍</div>
+                <div>
+                    <p>Ubicaciones</p>
+                    <h3 id="ubicaciones">0</h3>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- REGISTRO -->
+        <section class="content-grid">
+
+            <div class="card formulario">
+
+                <div class="card-title">
+                    <div>
+                        <span>REGISTRO</span>
+                        <h2>Nuevo árbol</h2>
+                    </div>
+
+                    <div class="title-icon">🌱</div>
+                </div>
+
+                <form id="formArbol">
+
+                    <label>Nombre común</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Ej. Mango"
+                        required
+                    >
+
+                    <label>Nombre científico</label>
+                    <input
+                        type="text"
+                        id="cientifico"
+                        placeholder="Ej. Mangifera indica"
+                        required
+                    >
+
+                    <label>Ubicación</label>
+                    <input
+                        type="text"
+                        id="ubicacion"
+                        placeholder="Ej. Jardín principal"
+                        required
+                    >
+
+                    <div class="form-row">
+
+                        <div>
+                            <label>Edad aproximada</label>
+                            <input
+                                type="number"
+                                id="edad"
+                                min="0"
+                                placeholder="10"
+                                required
+                            >
+                        </div>
+
+                        <div>
+                            <label>Estado</label>
+
+                            <select id="estado">
+
+                                <option value="Bueno">
+                                    Bueno
+                                </option>
+
+                                <option value="Regular">
+                                    Regular
+                                </option>
+
+                                <option value="Necesita atención">
+                                    Necesita atención
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <label>Observaciones</label>
+
+                    <textarea
+                        id="observaciones"
+                        placeholder="Describe las condiciones del árbol..."
+                    ></textarea>
+
+                    <button type="submit" class="btn-primary">
+                        + Registrar árbol
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- LISTA -->
+            <div class="card">
+
+                <div class="list-header">
+
+                    <div>
+                        <span>INVENTARIO</span>
+                        <h2>Árboles registrados</h2>
+                    </div>
+
+                    <input
+                        type="text"
+                        id="buscador"
+                        placeholder="🔎 Buscar..."
+                    >
+
+                </div>
+
+                <div id="contenedorArboles"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            ArboTrack © 2026 · Proyecto de Agricultura de Precisión 🌱
+        </p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
